@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/sign_in">
+
+    <fragment
+        android:id="@+id/sign_in"
+        android:name="com.example.classify.sign_in"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/resetpassword"
+        android:name="com.example.classify.resetpassword"
+        android:label="fragment_resetpassword"
+        tools:layout="@layout/fragment_resetpassword" />
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.example.classify.sign_up"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+</navigation>
