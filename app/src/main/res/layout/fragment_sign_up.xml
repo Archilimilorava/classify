@@ -5,16 +5,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".sign_up"
-    android:background="#666">
+    android:background="@drawable/ic_background">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="240dp"
         android:layout_marginEnd="50dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,7 +28,7 @@
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="Sign Up"
-            android:textColor="@color/white"
+            android:textColor="#FF5722"
             android:textSize="40sp"
             android:textStyle="bold" />
 
@@ -40,11 +40,11 @@
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="10dp"
+            android:elevation="3dp"
             android:ems="10"
             android:hint="name"
             android:inputType="textPersonName"
-            android:textColorHint="@color/white"
-            android:textSize="20sp" />
+            android:textSize="26sp" />
 
         <EditText
             android:id="@+id/signUpEmail"
@@ -54,11 +54,11 @@
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="10dp"
+            android:elevation="3dp"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/white"
-            android:textSize="20sp" />
+            android:textSize="26sp" />
 
         <EditText
             android:id="@+id/signUpPassword"
@@ -68,11 +68,11 @@
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="10dp"
+            android:elevation="3dp"
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
-            android:textColorHint="@color/white"
-            android:textSize="20sp" />
+            android:textSize="26sp" />
 
         <EditText
             android:id="@+id/signUpConfirmPassword"
@@ -82,19 +82,19 @@
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="10dp"
+            android:elevation="3dp"
             android:ems="10"
             android:hint="confirm password"
             android:inputType="textPassword"
-            android:textColorHint="@color/white"
-            android:textSize="20sp" />
+            android:textSize="26sp" />
 
         <CheckBox
             android:id="@+id/acceptTermOfService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="By signing up you accept the Term of service and Privacy Policy"
-            android:textColor="@color/white" />
+            android:textColor="#FF5722"
+            android:text="By signing up you accept the Term of service and Privacy Policy" />
 
         <Button
             android:id="@+id/signUpButton"
@@ -107,6 +107,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -121,22 +122,22 @@
             android:id="@+id/textViewSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Already have an account?"
-            android:textColor="@color/white"
             android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:gravity="right"
-            android:layout_marginRight="5dp"/>
+            android:text="Already have an account?"
+            android:textColor="#FF5722" />
 
         <TextView
             android:id="@+id/goSignInPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sign in"
-            android:textColor="@color/teal_200"
             android:layout_gravity="left"
-            android:gravity="left"/>
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Sign in"
+            android:textColor="@color/purple_700" />
     </LinearLayout>
 
 
