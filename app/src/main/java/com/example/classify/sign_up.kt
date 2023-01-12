@@ -13,8 +13,6 @@ import com.google.firebase.ktx.Firebase
 
 class sign_up : Fragment() {
 
-    //private lateinit var auth: FirebaseAuth
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,35 +38,37 @@ class sign_up : Fragment() {
         signUpButton.setOnClickListener {
             val sEmail = yourEmail.text.toString()
             val sPassword = yourPassword.text.toString()
-            val sRepeatPassword = repeatPassword.text.toString()
-            val sYourName = yourName.text.toString()
+            val confirmPassword = repeatPassword.text.toString()
+            val username = yourName.text.toString()
 
-/*            FirebaseAuth.getInstance()
-                .createUserWithEmailAndPassword(sEmail,sPassword)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful){
-                        val fragment = profile()
-                        val transaction = fragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.nav_container,fragment)?.commit()
-                    }else{
-                        Toast.makeText(activity,"failed",Toast.LENGTH_LONG).show()
+
+            if (sEmail.isNotEmpty() && sPassword.isNotEmpty() && username.isNotEmpty()) {
+                if (accept.isChecked) {
+                    if (sPassword == confirmPassword) {
+                        auth.createUserWithEmailAndPassword(sEmail, sPassword)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(
+                                        activity,
+                                        "User successfully created please sign in",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+
+                                } else {
+                                    Toast.makeText(activity, "Sign up failed", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }
+                    } else {
+                        Toast.makeText(activity, "Password is not match", Toast.LENGTH_SHORT).show()
                     }
-                }*/
-            auth.createUserWithEmailAndPassword(sEmail,sPassword)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful){
-                        val fragment = profile()
-                        val transaction = fragmentManager?.beginTransaction()
-                        transaction?.replace(R.id.nav_container,fragment)?.commit()
-                    }else{
-                        Toast.makeText(activity,"failed",Toast.LENGTH_LONG).show()
-                    }
+                }else{
+                    Toast.makeText(activity, "Please accept police", Toast.LENGTH_SHORT).show()
                 }
-
-
+            }else{
+                Toast.makeText(activity, "Empty fields is not allowed!!", Toast.LENGTH_SHORT).show()
+            }
         }
-
-
 
         return view
     }

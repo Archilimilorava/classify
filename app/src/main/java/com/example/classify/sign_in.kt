@@ -6,7 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class sign_in : Fragment() {
 
@@ -18,6 +23,10 @@ class sign_in : Fragment() {
         val view = inflater.inflate(R.layout.fragment_sign_in, container, false)
         val forgotPassword : TextView = view.findViewById(R.id.forgotPassword)
         val goSignUp: TextView = view.findViewById(R.id.goSignUpPage)
+        val signInButton: Button = view.findViewById(R.id.signInButton)
+        val auth: FirebaseAuth = Firebase.auth
+        var signInYourEmail: EditText = view.findViewById(R.id.signInEmail)
+        var signInYourPassword: EditText = view.findViewById(R.id.signInPassword)
 
         forgotPassword.setOnClickListener {
             val fragment = resetpassword()
@@ -29,6 +38,29 @@ class sign_in : Fragment() {
             val fragment = sign_up()
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.nav_container,fragment)?.commit()
+        }
+        signInButton.setOnClickListener {
+            val signInEmail = signInYourEmail.text.toString()
+            val signInPassword = signInYourPassword.text.toString()
+
+            if (signInEmail.isNotEmpty() && signInPassword.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(signInEmail, signInPassword)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val fragment = profile()
+                            val transaction = fragmentManager?.beginTransaction()
+                            transaction?.replace(R.id.nav_container, fragment)?.commit()
+                        } else {
+                            Toast.makeText(activity, "Sign in failed please provide correct email and password", Toast.LENGTH_LONG).show()
+                        }
+                    }
+            }else if (signInEmail.isEmpty() && signInPassword.isEmpty()){
+                Toast.makeText(activity, "Please provide email and password", Toast.LENGTH_SHORT).show()
+            }else if (signInEmail.isEmpty()){
+                Toast.makeText(activity, "Please provide email", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(activity, "Please provide password", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view

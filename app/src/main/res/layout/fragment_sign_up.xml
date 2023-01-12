@@ -44,7 +44,9 @@
             android:ems="10"
             android:hint="name"
             android:inputType="textPersonName"
-            android:textSize="26sp" />
+            android:textSize="18sp"
+            android:minHeight="90px"
+            android:paddingStart="10dp"/>
 
         <EditText
             android:id="@+id/signUpEmail"
@@ -58,7 +60,9 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textSize="26sp" />
+            android:textSize="18sp"
+            android:minHeight="90px"
+            android:paddingStart="10dp"/>
 
         <EditText
             android:id="@+id/signUpPassword"
@@ -72,7 +76,9 @@
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
-            android:textSize="26sp" />
+            android:textSize="18sp"
+            android:minHeight="90px"
+            android:paddingStart="10dp"/>
 
         <EditText
             android:id="@+id/signUpConfirmPassword"
@@ -86,7 +92,9 @@
             android:ems="10"
             android:hint="confirm password"
             android:inputType="textPassword"
-            android:textSize="26sp" />
+            android:textSize="18sp"
+            android:minHeight="90px"
+            android:paddingStart="10dp"/>
 
         <CheckBox
             android:id="@+id/acceptTermOfService"
