@@ -25,4 +25,25 @@
         android:name="com.example.classify.profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/account2"
+        android:name="com.example.classify.account"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.classify.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/my_courses"
+        android:name="com.example.classify.my_courses"
+        android:label="fragment_my_courses"
+        tools:layout="@layout/fragment_my_courses" />
+    <fragment
+        android:id="@+id/wishlist"
+        android:name="com.example.classify.wishlist"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+
 </navigation>

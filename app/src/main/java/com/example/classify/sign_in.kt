@@ -1,7 +1,6 @@
 package com.example.classify
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -62,7 +62,6 @@ class sign_in : Fragment() {
                 Toast.makeText(activity, "Please provide password", Toast.LENGTH_SHORT).show()
             }
         }
-
         return view
     }
 
