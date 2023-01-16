@@ -48,9 +48,12 @@ class sign_up : Fragment() {
                         auth.createUserWithEmailAndPassword(sEmail, sPassword)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
+                                    val fragment = profile()
+                                    val transaction = fragmentManager?.beginTransaction()
+                                    transaction?.replace(R.id.nav_container, fragment)?.commit()
                                     Toast.makeText(
                                         activity,
-                                        "User successfully created please sign in",
+                                        "User successfully created",
                                         Toast.LENGTH_LONG
                                     ).show()
 
