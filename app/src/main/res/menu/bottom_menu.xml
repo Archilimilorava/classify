@@ -6,10 +6,6 @@
         android:title="Home"
         android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/cart"
-        android:title="My Courses"
-        android:icon="@drawable/ic_play_circle" />
-    <item
         android:id="@+id/favorite"
         android:title="Wishlist"
         android:icon="@drawable/ic_favorite_border"/>

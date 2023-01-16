@@ -45,5 +45,10 @@
         android:name="com.example.classify.wishlist"
         android:label="fragment_wishlist"
         tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/allcourses"
+        android:name="com.example.classify.allcourses"
+        android:label="fragment_allcourses"
+        tools:layout="@layout/fragment_allcourses" />
 
 </navigation>

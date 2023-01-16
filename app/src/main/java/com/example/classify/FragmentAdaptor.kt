@@ -2,32 +2,39 @@ package com.example.classify
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 
-class FragmentAdaptor(fragmentManager: FragmentManager,lifecycle: Lifecycle):FragmentStateAdapter(fragmentManager,lifecycle) {
-    override fun getItemCount(): Int {
-        return 4
+
+class FragmentAdaptor(fm:FragmentManager): FragmentStatePagerAdapter(fm) {
+    override fun getCount(): Int {
+        return 2
     }
 
-    override fun createFragment(position: Int): Fragment {
-        return when(position){
-            0 ->{
-                home()
+    override fun getItem(position: Int): Fragment {
+        when(position) {
+            0 -> {
+                return allcourses()
             }
-            1 ->{
-                my_courses()
+            1 -> {
+                return my_courses()
             }
-            2 ->{
-                wishlist()
-            }
-            3 ->{
-                account()
-            }
-            else ->{
-                Fragment()
+            else -> {
+                return allcourses()
             }
         }
 
+
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        when (position) {
+            0 -> {
+                return "all Courses"
+            }
+            1 -> {
+                return "My Courses"
+            }
+        }
+        return super.getPageTitle(position)
     }
 }

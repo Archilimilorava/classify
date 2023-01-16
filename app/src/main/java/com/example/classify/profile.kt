@@ -20,10 +20,7 @@ class profile : Fragment() {
         val transaction = fragmentManager?.beginTransaction()
         transaction?.replace(R.id.nav_container1, fragment)?.commit()
 
-
         bottomNav.setOnNavigationItemSelectedListener(navListener)
-
-
 
         return view
     }
@@ -35,13 +32,9 @@ class profile : Fragment() {
             }
             R.id.account -> {
                 currentFragment = account()
-
-            }
-            R.id.cart -> {
-                currentFragment = wishlist()
             }
             R.id.favorite ->
-                currentFragment = my_courses()
+                currentFragment = wishlist()
         }
         val transaction = fragmentManager?.beginTransaction()
         transaction?.replace(R.id.nav_container1, currentFragment)?.commit()
