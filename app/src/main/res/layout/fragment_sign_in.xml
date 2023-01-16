@@ -33,7 +33,7 @@
         <EditText
             android:id="@+id/signInEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_email"
@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/signInPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/round_shape"
             android:drawableStart="@drawable/ic_lock"
