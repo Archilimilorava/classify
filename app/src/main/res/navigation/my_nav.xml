@@ -50,5 +50,15 @@
         android:name="com.example.classify.allcourses"
         android:label="fragment_allcourses"
         tools:layout="@layout/fragment_allcourses" />
+    <fragment
+        android:id="@+id/frash_product"
+        android:name="com.example.classify.frash_product"
+        android:label="fragment_frash_product"
+        tools:layout="@layout/fragment_frash_product" />
+    <fragment
+        android:id="@+id/higiena"
+        android:name="com.example.classify.higiena"
+        android:label="fragment_higiena"
+        tools:layout="@layout/fragment_higiena" />
 
 </navigation>

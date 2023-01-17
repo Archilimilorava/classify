@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 
 class FragmentAdaptor(fm:FragmentManager): FragmentStatePagerAdapter(fm) {
     override fun getCount(): Int {
-        return 2
+        return 4
     }
 
     override fun getItem(position: Int): Fragment {
@@ -17,6 +17,12 @@ class FragmentAdaptor(fm:FragmentManager): FragmentStatePagerAdapter(fm) {
             }
             1 -> {
                 return my_courses()
+            }
+            2 -> {
+                return frash_product()
+            }
+            3 -> {
+                return higiena()
             }
             else -> {
                 return allcourses()
@@ -29,10 +35,16 @@ class FragmentAdaptor(fm:FragmentManager): FragmentStatePagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         when (position) {
             0 -> {
-                return "all Courses"
+                return "ყველა პროდუქტი"
             }
             1 -> {
-                return "My Courses"
+                return "სურსათი"
+            }
+            2 -> {
+                return "ფრეშ პროდუქტი"
+            }
+            3 -> {
+                return "ჰიგიენა"
             }
         }
         return super.getPageTitle(position)
