@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 
 
 class sign_up : Fragment() {
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,6 +60,9 @@ class sign_up : Fragment() {
                                         "User successfully created",
                                         Toast.LENGTH_LONG
                                     ).show()
+                                    database = FirebaseDatabase.getInstance().getReference("users")
+                                    val User = User(username,sEmail)
+                                    database.child(username).setValue(User)
 
                                 } else {
                                     Toast.makeText(activity, "Sign up failed", Toast.LENGTH_SHORT)

@@ -1,5 +1,7 @@
 package com.example.classify
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +17,8 @@ import com.google.firebase.ktx.Firebase
 
 class sign_in : Fragment() {
 
+    private lateinit var sharedPreferences:SharedPreferences
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +31,9 @@ class sign_in : Fragment() {
         val auth: FirebaseAuth = Firebase.auth
         var signInYourEmail: EditText = view.findViewById(R.id.signInEmail)
         var signInYourPassword: EditText = view.findViewById(R.id.signInPassword)
+        sharedPreferences = requireActivity().getSharedPreferences("shared_pref", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+
 
         forgotPassword.setOnClickListener {
             val fragment = resetpassword()
@@ -42,6 +49,9 @@ class sign_in : Fragment() {
         signInButton.setOnClickListener {
             val signInEmail = signInYourEmail.text.toString()
             val signInPassword = signInYourPassword.text.toString()
+            editor.putString("NAME", signInEmail)
+            editor.apply()
+
 
             if (signInEmail.isNotEmpty() && signInPassword.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(signInEmail, signInPassword)
