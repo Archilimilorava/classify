@@ -42,11 +42,11 @@
             android:drawablePadding="10dp"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="name"
+            android:hint="Name"
             android:inputType="textPersonName"
-            android:textSize="18sp"
-            android:minHeight="90px"
-            android:paddingStart="10dp"/>
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/signUpEmail"
@@ -60,9 +60,9 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textSize="18sp"
-            android:minHeight="90px"
-            android:paddingStart="10dp"/>
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/signUpPassword"
@@ -74,11 +74,11 @@
             android:drawablePadding="10dp"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="password"
+            android:hint="Password"
             android:inputType="textPassword"
-            android:textSize="18sp"
-            android:minHeight="90px"
-            android:paddingStart="10dp"/>
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/signUpConfirmPassword"
@@ -90,11 +90,11 @@
             android:drawablePadding="10dp"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="confirm password"
+            android:hint="Confirm password"
             android:inputType="textPassword"
-            android:textSize="18sp"
-            android:minHeight="90px"
-            android:paddingStart="10dp"/>
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            android:textSize="18sp" />
 
         <CheckBox
             android:id="@+id/acceptTermOfService"
@@ -111,6 +111,14 @@
             android:background="@drawable/round_shape"
             android:text="Sign UP"
             android:textSize="20sp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For info:"
+            android:textColor="@color/black"
+            />
 
     </LinearLayout>
 

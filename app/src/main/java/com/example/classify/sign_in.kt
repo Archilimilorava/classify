@@ -51,15 +51,15 @@ class sign_in : Fragment() {
                             val transaction = fragmentManager?.beginTransaction()
                             transaction?.replace(R.id.nav_container, fragment)?.commit()
                         } else {
-                            Toast.makeText(activity, "Sign in failed please provide correct email and password", Toast.LENGTH_LONG).show()
+                            Toast.makeText(activity, "Sign in failed! Please enter correct E-mail and Password", Toast.LENGTH_LONG).show()
                         }
                     }
             }else if (signInEmail.isEmpty() && signInPassword.isEmpty()){
-                Toast.makeText(activity, "Please provide email and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }else if (signInEmail.isEmpty()){
-                Toast.makeText(activity, "Please provide email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please enter email", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(activity, "Please provide password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please enter password", Toast.LENGTH_SHORT).show()
             }
         }
         return view

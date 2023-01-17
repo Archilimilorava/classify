@@ -39,13 +39,13 @@ class resetpassword : Fragment() {
                         } else {
                             Toast.makeText(
                                 activity,
-                                "Password reset failed please provide correct email",
+                                "Password reset failed! Please enter correct email",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
                     }
             }else{
-                Toast.makeText(activity, "Please provide email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please enter email", Toast.LENGTH_SHORT).show()
             }
         }
 
