@@ -18,7 +18,6 @@ class CustomAdapter (private val mList: List<ItemsViewModel>) : RecyclerView.Ada
 
         return ViewHolder(view)
     }
-
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
@@ -41,5 +40,6 @@ class CustomAdapter (private val mList: List<ItemsViewModel>) : RecyclerView.Ada
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
         val textView: TextView = itemView.findViewById(R.id.textView)
+        val textView2: TextView = itemView.findViewById(R.id.addToCart)
     }
 }
